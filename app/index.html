@@ -59,17 +59,6 @@
           </div>
         </form>
 
-        <div class="album-results">
-          <span ng-repeat="item in results.albums.items">
-              <a href="#album/{{ item.id }}"><img style="border: 1px solid black; margin: 5px; width: 160px;" ng-src="{{item.images[1].url}}"></a>
-          </span>
-        </div>
-        <div class="artist-results">
-          <ul>
-            <li ng-repeat="item in results.artists.items">{{item.name}}</li>
-          </ul>
-        </div>
-
       </div>
       <div ng-view=""></div>
     </div>
@@ -100,6 +89,8 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/search.js"></script>
         <script src="scripts/services/searchfactory.js"></script>
+        <script src="scripts/controllers/searchalbum.js"></script>
+        <script src="scripts/controllers/searchartist.js"></script>
         <!-- endbuild -->
 </body>
 </html>

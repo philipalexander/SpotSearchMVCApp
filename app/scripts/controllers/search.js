@@ -1,13 +1,12 @@
 //search controller
 
 angular.module('spotsearchmvcApp')
-.controller('SearchController', ['$scope', 'searchFactory',
-function($scope, searchFactory) {
+.controller('SearchController', ['$scope', '$location',
+function($scope, $location) {
 
   $scope.types = 'album';
-  $scope.results = {};
-
-  $scope.runSearch = function() {
+/*
+$scope.runSearch = function() {
     searchFactory.getSearchResults($scope.searchQuery, $scope.types)
   	  .success(function(results){
         $scope.results = results;
@@ -16,6 +15,9 @@ function($scope, searchFactory) {
       .error(function(error){
         $scope.status = 'Unable to load search results: ' + error.message;
       });
+  };*/
+  $scope.runSearch = function() {
+    $location.path('/search/' + $scope.types + '/' + $scope.searchQuery);
   };
 
 }

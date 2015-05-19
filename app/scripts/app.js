@@ -25,6 +25,14 @@ angular
       .when('/about', {
         
       })
+      .when('/search/artist/:query', {
+        templateUrl: 'views/artistsearch.html',
+        controller: 'SearchArtistController'
+      })
+      .when('/search/album/:query', {
+        templateUrl: 'views/albumsearch.html',
+        controller: 'SearchAlbumController'
+      })
       .otherwise({
         redirectTo: '/'
       });
