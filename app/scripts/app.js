@@ -16,15 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'mediaPlayer'
   ])
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
-      .when('/', {
-        
-      })
-      .when('/about', {
-        
-      })
       .when('/search/artist/:query', {
         templateUrl: 'views/artistsearch.html',
         controller: 'SearchArtistController'
@@ -32,6 +27,10 @@ angular
       .when('/search/album/:query', {
         templateUrl: 'views/albumsearch.html',
         controller: 'SearchAlbumController'
+      })
+      .when('/album/:albumId', {
+        templateUrl: 'views/album.html',
+        controller: 'AlbumController'
       })
       .otherwise({
         redirectTo: '/'
